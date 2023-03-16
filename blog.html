@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      pre {
+        white-space: pre-line;
+      }
+    </style>
+</head>
+<body class="mb-10">
+    <header class="h-16 flex items-center shadow-sm">
+        <nav class="flex justify-between items-center w-9/12 mx-auto">
+          <div class="text-zinc-800 font-bold uppercase">
+            <h1 class="text-lg"><a href="index.html">Quiz <span class="text-green-700">HERO</a></span></h1>
+            <p class="text-[10px] font-normal capitalize -mt-1">
+              Get ready to Quiz and be amazed!
+            </p>
+          </div>
+          <button
+            class="bg-green-600 font-light text-sm px-5 py-1 rounded text-white"
+          id="blog-btn">
+            Blog
+          </button>
+        </nav>
+      </header>
+      <!-- Header/Navbar section end -->
+
+    <main class="w-[80%] mx-auto">
+        <h1 class="text-3xl font-bold text-center mt-10">Qna</h1>
+        <section>
+            <div class="q-1">
+                <div>
+                    <p class="text-3xl font-semibold">1. DIfference between map(), filter(), find(), and forEach() are:</p>
+                </div>
+                <div class="">
+                    <div>
+                        <p class="text-center font-bold mt-5">map()</p>
+                        <p>Return a array as the same length of original array with each element based on given function. <br> Example: <br> <pre>
+                          <code>
+                            const numbers = [1, 2, 3, 4, 5];
+                            const multipliedNumbers = numbers.map((num) => num * 2);
+                            console.log(multipliedNumbers); // Output: [2, 4, 6, 8, 10]
+                            
+                          </code>
+                        </pre></p>
+                    </div>
+                    <div>
+                        <p class="text-center font-bold mt-5">filter()</p>
+                        <p>Return an array with elements that match a given condition. <br>
+                        Example: <br> <pre>
+                          <code>
+                            const numbers = [1, 2, 3, 4, 5];
+                          const evenNumbers = numbers.filter((num) => num % 2 === 0);
+                          console.log(evenNumbers); // Output: [2, 4]
+                          </code>
+                        </pre>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-center font-bold mt-5">find()</p>
+                        <p>Return the first element that matches a given condition. <br> Example: <br> <pre>
+                          <code>const numbers = [1, 2, 3, 4, 5];
+                            const evenNumber = numbers.find((num) => num % 2 === 0);
+                            console.log(evenNumber); // Output: 2
+                            </code>
+                        </pre></p>
+                    </div>
+                    <div>
+                        <p class="text-center font-bold mt-5">forEach()</p>
+                        <p>forEach does not return anything. It simply executes a provided function once for each element in an array. <br> Example: <br> <pre>
+                          <code>
+                            const numbers = [1, 2, 3, 4, 5];
+                            numbers.forEach((num) => console.log(num)); // Output: 1 2 3 4 5 
+                          </code>
+                        </pre></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="q-2">
+              <div>
+                <p class="text-3xl font-semibold">2. Difference between localStorage , sessionStorage , cookie are :</p>
+              </div>
+              <div class="grid lg:grid-cols-3 gap-10">
+                <div>
+                  <p class="text-center font-bold mt-5">localStorage</p>
+                  <p>localStorage is a way store data in web browser. The data stored in localStorage is available in same domain. It doesn't clear the stored data.</p>
+              </div>
+                <div>
+                  <p class="text-center font-bold mt-5">sessionStorage</p>
+                  <p>sessionStorage is similar as localStorage, but it cleared stored data when the browser window or tab is closed.</p>
+              </div>
+                <div>
+                  <p class="text-center font-bold mt-5">cookie</p>
+                  <p>A cookie is a small piece of data that is stored on the client-side and is sent to the server with every HTTP request. It can store up to 4 KB of data and has an expiration date. The data stored in a cookie is available to all pages from the same domain, including future visits.</p>
+              </div>
+              </div>
+            </div>
+            <div class="q-3">
+              <div>
+                <p class="text-3xl font-semibold">3. EventLoop and it's working process :</p>
+              </div>
+              <div class="mt-5">
+                <p>
+                  The event loop is a crucial mechanism in JavaScript that enables it to handle multiple tasks simultaneously without blocking or freezing the main execution thread. Whenever you execute JavaScript code, any long-running or asynchronous tasks, like fetching data from a server or waiting for user input, are added to a task queue.
+                  The event loop continually checks this task queue for pending tasks and executes them in the order they are received. It ensures that only one task is processed at a time, and if a task takes too long to complete, other tasks can still execute without being blocked.
+                </p>
+              </div>
+            </div>
+            <div class="quizTimer-function-explain">
+              <p class="text-3xl font-semibold mt-5">4. The working procedure of quizTimer() function :</p>
+              <p class="mt-5">The quizTimer function is designed to show a timer on our index.html page and update it every second. It also provides an optional dismiss parameter that can be used to stop the timer. The function utilizes the setInterval method to refresh the timer display and track the number of seconds that have passed. Additionally, it formats the minutes and seconds with leading zeros and alternates the timer color every 60 seconds. To stop the timer when needed, clearInterval function is implemented.</p>
+            </div>
+            <div class="chooseQuiz-function-explain">
+              <p class="text-3xl font-semibold mt-5">5. The working procedure of chooseQuiz() function :</p>
+              <p class="mt-5">The chooseQuiz function is responsible for handling the selection of a quiz option when a user clicks on it. It accepts two parameters: index and givenAns. The function first checks if an answer already exists for the current quiz. If one exists, it finds the answer's index in the answers array and replaces it with a new object containing the updated givenAns property. In case no answer exists, the function creates a new object by copying the properties of the current quiz object from the quizData array. Once the answers array is updated, the function calls the displayAnswers function to refresh the display of the quiz answers.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
